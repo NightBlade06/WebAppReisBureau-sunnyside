@@ -18,7 +18,7 @@
                 <option value="vliegreis">vliegreis</option>
                 <option value="treinreis">treinreis</option>
             </select>
-
+            <a href="overzicht.php">link to page</a>
             <input type="number">
 
             <input type="submit">

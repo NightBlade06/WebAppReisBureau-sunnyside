@@ -1,0 +1,81 @@
+colours {
+    color: #7bceef;
+    color: #42a5de;
+    color: #c6def7;
+    color: #9cbde7;
+    color: #ffad42;
+    color: #EDECF6;}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #EDECF6;
+}
+header img {
+    width: 100%;
+}
+
+footer {
+    background-color: #7bceef;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-text {
+    color: black;
+    font-size: 40px;
+
+}
+
+main  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.searchForm {
+    margin-top: -50px;
+    margin-bottom: 50px;
+    display: flex;
+    background-color: #7bceef;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 100px;
+    width: 1200px;
+    border-radius: 5px;
+
+}
+.searchInputBox {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    width: 150px;
+    padding: 20px;
+}
+.searchInputBox p {
+    font-size: 20px;
+}
+.searchSelect {
+
+    font-size: 15px;
+
+}
+.searchOption {
+    font-size: 15px;
+}
+.searchButtonBox {
+    display: flex;
+    width: 230px;
+}
+.searchButton {
+    background-color: #ffad42;
+    border-block: #ffad42;
+    border: #ffad42;
+    border-radius: 10px;
+    width: 200px;
+    height: 55px;
+    font-size: 18px;
+}
