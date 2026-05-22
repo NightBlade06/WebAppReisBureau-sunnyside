@@ -12,6 +12,17 @@
     </header>
 
     <main>
+        <form action="" method="get">
+
+            <select name="" id="">
+                <option value="vliegreis">vliegreis</option>
+                <option value="treinreis">treinreis</option>
+            </select>
+            <a href="overzicht.php">link to page</a>
+            <input type="number">
+
+            <input type="submit">
+        </form>
         <div></div>
         <div class="color-background">
             <div class = row-vacation-types>
