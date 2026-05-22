@@ -1,0 +1,56 @@
+.color-background{
+   background-color: #edecf6;
+}
+
+.color-text{
+    color: #000000;
+}
+
+.color-orange{
+    background-color: #FFAD42;
+}
+
+.color-bluish-gary{
+    background-color: #9CBDE7;
+}
+
+.color-gray{
+    background-color: #C6DEF7;
+}
+
+.color-lightblue{
+    background-color: #7BCEEF;
+}
+
+.color-blue{
+    background-color: #42A5DE;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.row-vacation-types{
+display: flex;
+    flex-direction: row;
+}
+
+.vacation-types-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #C6DEF7;
+    border-color: #42A5DE;
+    border-style: solid;
+    width: 300px;
+    height: 300px;
+    margin: 1px;
+}
+
+.icon-img{
+    margin-top: 30px;
+    height: 50%;
+    width: 50%;
+}
