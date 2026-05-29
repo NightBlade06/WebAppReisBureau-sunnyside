@@ -4,13 +4,15 @@ colours {
     color: #c6def7;
     color: #9cbde7;
     color: #ffad42;
-    color: #EDECF6;}
+    color: #EDECF6;
+}
 
 body {
     padding: 0;
     margin: 0;
     background-color: #EDECF6;
 }
+
 header img {
     width: 100%;
 }
@@ -26,18 +28,16 @@ footer {
 .footer-text {
     color: black;
     font-size: 40px;
-
 }
 
-main  {
+.searchBox {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
+
 .searchForm {
-    margin-top: -50px;
-    margin-bottom: 50px;
     display: flex;
     background-color: #7bceef;
     align-items: center;
@@ -46,30 +46,41 @@ main  {
     height: 100px;
     width: 1200px;
     border-radius: 5px;
-
+    align-self: center;
+    margin-bottom: 50px;
+    margin-top: -50px;
 }
+
 .searchInputBox {
     display: flex;
     flex-direction: column;
     height: 80px;
     width: 150px;
     padding: 20px;
+    z-index: 1000;
 }
+
 .searchInputBox p {
     font-size: 20px;
 }
-.searchSelect {
 
+.searchSelect {
+    z-index: 1;
     font-size: 15px;
 
 }
+
 .searchOption {
     font-size: 15px;
+    z-index: 1;
 }
+
 .searchButtonBox {
     display: flex;
     width: 230px;
+    z-index: 1;
 }
+
 .searchButton {
     background-color: #ffad42;
     border-block: #ffad42;
@@ -78,4 +89,10 @@ main  {
     width: 200px;
     height: 55px;
     font-size: 18px;
+    z-index: 1;
+}
+.customizationBox {
+    height: 1200px;
+    width: 300px;
+    background-color: #7bceef;
 }
