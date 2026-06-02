@@ -1,3 +1,84 @@
+colours {
+    color: #7bceef;
+    color: #42a5de;
+    color: #c6def7;
+    color: #9cbde7;
+    color: #ffad42;
+    color: #EDECF6;}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #EDECF6;
+}
+header img {
+    width: 100%;
+}
+
+footer {
+    background-color: #7bceef;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer-text {
+    color: black;
+    font-size: 40px;
+
+}
+
+main  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.searchForm {
+    margin-top: -50px;
+    margin-bottom: 50px;
+    display: flex;
+    background-color: #7bceef;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 100px;
+    width: 1200px;
+    border-radius: 5px;
+
+}
+.searchInputBox {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    width: 150px;
+    padding: 20px;
+}
+.searchInputBox p {
+    font-size: 20px;
+}
+.searchSelect {
+
+    font-size: 15px;
+
+}
+.searchOption {
+    font-size: 15px;
+}
+.searchButtonBox {
+    display: flex;
+    width: 230px;
+}
+.searchButton {
+    background-color: #ffad42;
+    border-block: #ffad42;
+    border: #ffad42;
+    border-radius: 10px;
+    width: 200px;
+    height: 55px;
+    font-size: 18px;
+}
 .color-background{
    background-color: #edecf6;
 }
@@ -26,11 +107,6 @@
     background-color: #42A5DE;
 }
 
-main{
-    display: flex;
-    justify-content: center;
-}
-
 .row-vacation-types{
 display: flex;
     flex-direction: row;
@@ -53,4 +129,56 @@ display: flex;
     margin-top: 30px;
     height: 50%;
     width: 50%;
+}
+.uit-reizen-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.uit-reis{
+    width: 400px;
+    height: 650px;
+    margin: 20px;
+    background-color: #C6DEF7;
+}
+
+.uit-reis-icon{
+    height: 20%;
+    width: 20%;
+}
+
+.uit-reis-margin{
+    margin-left: 20px;
+}
+
+.uit-reis-column{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.uit-reis-header-size{
+    width: 100%;
+    height: 30%;
+}
+
+uit-reis-size{
+    width: 20%;
+}
+
+.uit-reis-row{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.margin-prijs{
+    margin-top: -40px;
+}
+
+.margin-heart-icon {
+    margin-right: 20px;
+    margin-left: 210px;
 }
