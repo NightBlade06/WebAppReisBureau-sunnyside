@@ -54,15 +54,47 @@
             </div>
         </form>
     </div>
-    <div>
-        <div class="customizationBox">
-            <div>
-            bestemming
+    <div class="generalBox ">
+        <div class="customizationMainBox">
+            <div class="customizationDestinationBox">
+                <h1>Bestemming</h1>
+                <select class ="customizationDestionationSelect" name="destination">
+                    <option class="destionationOption">Greek</option>
+                    <option class="destionationOption">Eqypt</option>
+                    <option class="destionationOption">Italy</option>
+                    <option class="destionationOption">Spain</option>
+                </select>
             </div>
+            <div class="customizationPriceBox">
+                <h1>Prijs</h1>
+                <p>prijs persoon tussen: € 0 - +€2000</p>
+                <input type="range" min="0" max="2000" value="50" class="slider" id="myRange">
+            </div>
+            <verblijf>
         </div>
-        <div>
-            <div>
-
+        <div class="travelBox">
+            <img src="assets/img/cato.png" alt="" class="travelImg">
+            <div class="travelInfoMainBox">
+                <div class="travelInfoBox">
+                    <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                    <h1>[country] hotel</h1>
+                    <h2>locatie, locatie, land</h2>
+                    <ul>
+                        <li>info</li>
+                        <li>info</li>
+                        <li>info</li>
+                    </ul>
+                    <h4>datum || datum</h4>
+                    <h5>plane from location</h5>
+                </div>
+                <div class="travelInfoBox">
+                    <img src="assets/img/heaert%20border(64px).png" alt="" class="heartImg">
+                    <div class="travelPrizeBox">
+                    <p>Vanaf prijs p.p.</p>
+                    <h1> €Prijs</h1>
+                    <button>Bekijk</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
