@@ -67,8 +67,9 @@
             </div>
             <div class="customizationPriceBox">
                 <h1>Prijs</h1>
-                <p>prijs persoon tussen: € 0 - +€2000</p>
-                <input type="range" min="0" max="2000" value="50" class="slider" id="myRange">
+                <p class="outputText">Max amount of money</p>
+                <p class="output" id="output">  200 </p>
+                <input id="customizationPriceSlider" class="customizationPriceSlider" type="range" min="0" max="2000" value="2000" class="slider" id="myRange">
             </div>
             <verblijf>
         </div>
@@ -106,4 +107,5 @@
     <p class="footer-text">Over ons</p>
 </footer>
 </body>
+<script src="assets/js/script.js"></script>
 </html>

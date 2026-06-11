@@ -208,9 +208,7 @@ footer {
     width: 300px;
     background-color: #c6def7;
 }
-.customizationPriceBox p {
-    padding-left: 15px;
-}
+
 .customizationPriceBox input {
     margin-left: 25px;
     width: 180px;
@@ -229,4 +227,16 @@ footer {
 }
 .destionationOption {
     font-size: 20px;
+}
+.customizationPriceSlider {
+    opacity: 0.7;
+    outline: none;
+    -webkit-transition: .2s;
+    width: 100%;
+}
+.outputText {
+    padding-left: 40px;
+}
+.output {
+    padding-left: 90px;
 }

@@ -51,8 +51,8 @@
                 </Select>
             </div>
             <div class="searchButtonBox">
-                <button class="searchButton" type="submit"> View our choices</button>
-            </div>
+                <button  class="searchButton" type="submit"> View our choices</button>
+            </di>
         </form>
     </div>
     <div class="color-background">
