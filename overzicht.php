@@ -1,3 +1,9 @@
+<?php if (isset($_GET['zoeken'])) {
+$sql = $connectie->prepare("SELECT * FROM Menu WHERE Naam LIKE :filter");
+$sql->bindValue(':filter', '%' . $_GET['filter'] . '%');
+$sql->execute();
+$result = $sql->fetchAll();
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
