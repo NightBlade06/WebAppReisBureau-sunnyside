@@ -1,9 +1,9 @@
-<?php if (isset($_GET['zoeken'])) {
-$sql = $connectie->prepare("SELECT * FROM Menu WHERE Naam LIKE :filter");
-$sql->bindValue(':filter', '%' . $_GET['filter'] . '%');
+<?php
+$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+$sql = $connectie->prepare("SELECT * FROM `trips`");
 $sql->execute();
-$result = $sql->fetchAll();
-}?>
+$tripDetails = $sql->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,30 +79,34 @@ $result = $sql->fetchAll();
             </div>
             <verblijf>
         </div>
-        <div class="travelBox">
-            <img src="assets/img/cato.png" alt="" class="travelImg">
-            <div class="travelInfoMainBox">
-                <div class="travelInfoBox">
-                    <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                    <h1>[country] hotel</h1>
-                    <h2>locatie, locatie, land</h2>
-                    <ul>
-                        <li>info</li>
-                        <li>info</li>
-                        <li>info</li>
-                    </ul>
-                    <h4>datum || datum</h4>
-                    <h5>plane from location</h5>
-                </div>
-                <div class="travelInfoBox">
-                    <img src="assets/img/heaert%20border(64px).png" alt="" class="heartImg">
-                    <div class="travelPrizeBox">
-                    <p>Vanaf prijs p.p.</p>
-                    <h1> €Prijs</h1>
-                    <button>Bekijk</button>
+        <div class="column-trips">
+            <?php foreach($tripDetails as $tripDetail) { ?>
+                <div class="travelBox">
+                    <img src="assets/img/cato.png" alt="" class="travelImg">
+                    <div class="travelInfoMainBox">
+                        <div class="travelInfoBox">
+                            <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <h1>[country] hotel</h1>
+                            <h2>locatie, locatie,<?php echo $tripDetail['destination']; ?></h2>
+                            <ul>
+                                <li>info</li>
+                                <li>info</li>
+                                <li>info</li>
+                            </ul>
+                            <h4>datum || datum</h4>
+                            <h5>plane from location</h5>
+                        </div>
+                        <div class="travelInfoBox">
+                            <img src="assets/img/heaert%20border(64px).png" alt="" class="heartImg">
+                            <div class="travelPrizeBox">
+                                <p>Vanaf prijs p.p.</p>
+                                <h1> €<?php echo $tripDetail['price'];?></h1>
+                                <button>Bekijk</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </main>
