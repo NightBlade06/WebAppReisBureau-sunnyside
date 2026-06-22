@@ -133,6 +133,8 @@ display: flex;
 .uit-reizen-box{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 1400px;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -181,4 +183,11 @@ uit-reis-size{
 .margin-heart-icon {
     margin-right: 20px;
     margin-left: 210px;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }

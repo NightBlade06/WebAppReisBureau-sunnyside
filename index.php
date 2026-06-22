@@ -86,8 +86,8 @@ $tripDetails = $sql->fetchAll();
         <h1>
             Uitgeligte Reizen
         </h1>
-        <?php foreach($tripDetails as $tripDetail) { ?>
         <div class="uit-reizen-box">
+            <?php foreach($tripDetails as $tripDetail) { ?>
             <div class="uit-reis">
                 <img class="uit-reis-header-size" src="assets/img/header-img.jpg" alt="Header-img">
                 <div class="uit-reis-margin">
@@ -95,7 +95,7 @@ $tripDetails = $sql->fetchAll();
                         <div class="uit-reis-column">
                             <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
                             <h2>Naam reis/hotel</h2>
-                            <h3 class>Locatie, Locatie, <?php echo $tripDetail['destination']; ?></h3class>
+                            <h3>Locatie, Locatie, <?php echo $tripDetail['destination']; ?></h3class>
                         </div>
                         <div class="uit-reis-size">
                             <img class="uit-reis-icon margin-heart-icon" src="assets/img/cato.png" alt="heart-icon">
@@ -118,8 +118,8 @@ $tripDetails = $sql->fetchAll();
                     </div>
                 </div>
             </div>
+            <?php } ?>
         </div>
-        <?php } ?>
     </div>
 
 </main>
