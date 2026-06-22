@@ -1,3 +1,10 @@
+<?
+$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+$sql = $connectie->prepare("SELECT * FROM `trips`");
+$sql->execute();
+$tripDetails = $sql->fetchAll();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,38 +86,40 @@
         <h1>
             Uitgeligte Reizen
         </h1>
+        <?php foreach($tripDetails as $tripDetail) { ?>
         <div class="uit-reizen-box">
             <div class="uit-reis">
-            <img class="uit-reis-header-size" src="assets/img/header-img.jpg" alt="Header-img">
-            <div class="uit-reis-margin">
-                <div class="uit-reis-row">
-                    <div class="uit-reis-column">
-                        <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                        <h2>Naam reis/hotel</h2>
-                        <h3>Locatie, Locatie, Land</h3>
+                <img class="uit-reis-header-size" src="assets/img/header-img.jpg" alt="Header-img">
+                <div class="uit-reis-margin">
+                    <div class="uit-reis-row">
+                        <div class="uit-reis-column">
+                            <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
+                            <h2>Naam reis/hotel</h2>
+                            <h3 class>Locatie, Locatie, <?php echo $tripDetail['destination']; ?></h3class>
+                        </div>
+                        <div class="uit-reis-size">
+                            <img class="uit-reis-icon margin-heart-icon" src="assets/img/cato.png" alt="heart-icon">
+                        </div>
                     </div>
-                    <div class="uit-reis-size">
-                        <img class="uit-reis-icon margin-heart-icon" src="assets/img/cato.png" alt="heart-icon">
-                    </div>
-                </div>
-                <ul>
-                    <li>info</li>
-                    <li>info</li>
-                    <li>info</li>
-                </ul>
-                <div class="uit-reis-row">
-                    <div class="uit-reis-column">
-                        <p>datum|datum <br> ontbijt 2 personen <br> vliegveld|Schiphol </p>
-                    </div>
-                    <div class="margin-prijs">
-                        <p>vanaf prijs p.p.</p>
-                        <p>$Prijs</p>
-                        <button>Bekijk</button>
+                    <ul>
+                        <li>info</li>
+                        <li>info</li>
+                        <li>info</li>
+                    </ul>
+                    <div class="uit-reis-row">
+                        <div class="uit-reis-column">
+                            <p>datum|datum <br> ontbijt 2 personen <br> vliegveld|Schiphol </p>
+                        </div>
+                        <div class="margin-prijs">
+                            <p>vanaf prijs p.p.</p>
+                            <p>$<?php echo $tripDetail['price']; ?></p>
+                            <button>Bekijk</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+        <?php } ?>
     </div>
 
 </main>
