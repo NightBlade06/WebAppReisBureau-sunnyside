@@ -1,3 +1,8 @@
+<?php
+$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
