@@ -1,8 +1,5 @@
 <?php
 $connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
-
-<?
-$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
 $sql = $connectie->prepare("SELECT * FROM `trips`");
 $sql->execute();
 $tripDetails = $sql->fetchAll();
