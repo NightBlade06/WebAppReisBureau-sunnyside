@@ -1,3 +1,6 @@
+<?php
+$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+
 <?
 $connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
 $sql = $connectie->prepare("SELECT * FROM `trips`");
@@ -58,8 +61,8 @@ $tripDetails = $sql->fetchAll();
                 </Select>
             </div>
             <div class="searchButtonBox">
-                <button class="searchButton" type="submit"> View our choices</button>
-            </div>
+                <button  class="searchButton" type="submit"> View our choices</button>
+            </di>
         </form>
     </div>
     <div class="color-background">
