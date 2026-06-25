@@ -1,8 +1,9 @@
 <?php
-$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
-$sql = $connectie->prepare("SELECT * FROM `trips`");
-$sql->execute();
-$tripDetails = $sql->fetchAll();
+$conn = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+$sql = ("SELECT * FROM trips r join accomadation v on r.accomadationID = v.accomadationID");
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$tripDetails = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -127,7 +128,7 @@ $tripDetails = $sql->fetchAll();
 <footer>
     <a href="index.php" class="footer-text">Home</a>
     <a href="overzicht.php" class="footer-text">Reizen</a>
-    <a href="" f="" class="footer-text">Over ons</a>
+    <a href="login.php" class="footer-text">Login</a>
 </footer>
 </body>
 </html>
