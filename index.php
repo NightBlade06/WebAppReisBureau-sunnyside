@@ -1,9 +1,8 @@
 <?php
-$conn = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
-$sql = "SELECT * FROM trips r join accomadation v on r.accomadationID = v.accomadationID";
-$stmt = $conn->prepare($sql);
-$stmt->execute();
-$tripDetails = $stmt->fetchAll();
+$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+$sql = $connectie->prepare("SELECT * FROM `trips`");
+$sql->execute();
+$tripDetails = $sql->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -59,8 +58,8 @@ $tripDetails = $stmt->fetchAll();
                 </Select>
             </div>
             <div class="searchButtonBox">
-                <button class="searchButton" type="submit"> View our choices</button>
-            </div>
+                <button  class="searchButton" type="submit"> View our choices</button>
+            </di>
         </form>
     </div>
     <div class="color-background">
