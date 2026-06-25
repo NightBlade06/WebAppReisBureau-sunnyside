@@ -27,4 +27,5 @@ else {
         <button name="login" type="submit">Login</button>
 </form>
 </body>
+<script src="assets/js/logInJS.js"></script>
 </html>

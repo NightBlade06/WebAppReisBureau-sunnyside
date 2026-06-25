@@ -246,3 +246,7 @@ footer {
     display: flex;
     flex-direction: column;
 }
+.fixed {
+
+    position: fixed;
+}

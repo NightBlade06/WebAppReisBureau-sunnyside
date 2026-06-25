@@ -1,8 +1,9 @@
 <?php
-$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
-$sql = $connectie->prepare("SELECT * FROM `trips`");
-$sql->execute();
-$tripDetails = $sql->fetchAll();
+$conn = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+$sql = ("SELECT * FROM trips r join accomadation v on r.accomadationID = v.accomadationID");
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$tripDetails = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +95,7 @@ $tripDetails = $sql->fetchAll();
                     <div class="uit-reis-row">
                         <div class="uit-reis-column">
                             <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                            <h2>Naam reis/hotel</h2>
+                            <h2><?php echo $tripDetail['location']; ?></h2>
                             <h3 class>Locatie, Locatie, <?php echo $tripDetail['destination']; ?></h3class>
                         </div>
                         <div class="uit-reis-size">
@@ -112,7 +113,7 @@ $tripDetails = $sql->fetchAll();
                         </div>
                         <div class="margin-prijs">
                             <p>vanaf prijs p.p.</p>
-                            <p>$<?php echo $tripDetail['price']; ?></p>
+                            <p>€<?php echo $tripDetail['price']; ?></p>
                             <button>Bekijk</button>
                         </div>
                     </div>
