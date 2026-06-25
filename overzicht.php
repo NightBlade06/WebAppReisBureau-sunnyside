@@ -121,9 +121,9 @@ if (isset($_GET['search'])) {
 </main>
 
 <footer>
-    <p class="footer-text">Home</p>
-    <p class="footer-text">Reizen</p>
-    <p class="footer-text">Over ons</p>
+    <a href="index.php" class="footer-text">Home</a>
+    <a href="overzicht.php" class="footer-text">Reizen</a>
+    <a href="login.php" class="footer-text">Login</a>
 </footer>
 </body>
 <script src="assets/js/script.js"></script>
