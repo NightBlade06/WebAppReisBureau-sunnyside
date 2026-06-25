@@ -15,17 +15,6 @@ if (isset($_POST['Delete'])) {
     $sql->execute();
 }
 
-if (isset($_POST['add'])) {
-    $sql = $connectie->prepare("INSERT INTO Menu (destination, maxPeople, accomadationID, flightID, price, stars) VALUES (:destination, :maxPeople, :accomadationID, :flightID, :price, :stars)");
-    $sql->bindValue(':destination', $_POST['destination']);
-    $sql->bindValue(':maxPeople', $_POST['maxPeople']);
-    $sql->bindValue(':accomadationID', $_POST['accomadationID']);
-    $sql->bindValue(':flightID', $_POST['flightID']);
-    $sql->bindValue(':price', $_POST['price']);
-    $sql->bindValue(':stars', $_POST['stars']);
-    $sql->execute();
-}
-
 
 ?>
 <!DOCTYPE html>
@@ -37,6 +26,7 @@ if (isset($_POST['add'])) {
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
 <body>
+<a href="add.php">add trip</a>
 Currently under construction
 <a href="logout.php">log out</a>
 <?php foreach ($trips as $trip) {?>
@@ -55,6 +45,4 @@ Currently under construction
 ?>
 
 </body>
-
-<button>
 </html>
