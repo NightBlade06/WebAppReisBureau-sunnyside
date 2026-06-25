@@ -1,8 +1,16 @@
 <?php
-$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
-$sql = $connectie->prepare("SELECT * FROM `trips`");
-$sql->execute();
-$tripDetails = $sql->fetchAll();
+$conn = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+$sql = ("SELECT * FROM trips r join accomadation v on r.accomadationID = v.accomadationID");
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$tripDetails = $stmt->fetchAll();
+
+if (isset($_GET['search'])) {
+    $sql = $connectie->prepare("SELECT * FROM trips r join accomadation v on r.accomadationID = v.accomadationID");
+    $sql->bindValue(':filter', '%' . $_GET['filter'] . '%');
+    $sql->execute();
+    $result = $sql->fetchAll();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,9 +63,9 @@ $tripDetails = $sql->fetchAll();
                     <option class="searchOption" value="16">4</option>
                 </Select>
             </div>
-            <div class="searchButtonBox">
+            <form class="searchButtonBox" id="search" >
                 <button class="searchButton" type="submit"> View our choices</button>
-            </div>
+            </form>
         </form>
     </div>
     <div class="generalBox ">
@@ -78,7 +86,7 @@ $tripDetails = $sql->fetchAll();
                 <input id="customizationPriceSlider" class="customizationPriceSlider" type="range" min="0" max="2000"
                        value="2000" class="slider" id="myRange">
             </div>
-            <verblijf>
+
         </div>
         <div class="column-trips">
             <?php foreach ($tripDetails as $tripDetail) { ?>
@@ -87,8 +95,8 @@ $tripDetails = $sql->fetchAll();
                     <div class="travelInfoMainBox">
                         <div class="travelInfoBox">
                             <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                            <h1>[country] hotel</h1>
-                            <h2>locatie, locatie,<?php echo $tripDetail['destination']; ?></h2>
+                            <h1><?php echo $tripDetail['location']?></h1>
+                            <h2>country: <?php echo $tripDetail['destination']; ?></h2>
                             <ul>
                                 <li>info</li>
                                 <li>info</li>
