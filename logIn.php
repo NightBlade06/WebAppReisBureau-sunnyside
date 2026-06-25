@@ -26,6 +26,9 @@ else {
  <input class = "login-input" name="password" id="password" type="password" placeholder="password"/>
         <button name="login" type="submit">Login</button>
 </form>
+<footer>
+    <a href="logout.php" class="footer-text">Home</a>
+</footer>
 </body>
 <script src="assets/js/logInJS.js"></script>
 </html>
