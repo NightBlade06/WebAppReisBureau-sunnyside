@@ -15,4 +15,6 @@ header('location:logIn.php');}
 Currently under construction
 <a href="logout.php">log out</a>
 </body>
+
+<button>
 </html>

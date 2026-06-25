@@ -96,7 +96,7 @@ $tripDetails = $stmt->fetchAll();
                         <div class="uit-reis-column">
                             <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
                             <h2><?php echo $tripDetail['location']; ?></h2>
-                            <h3>Locatie, Locatie, <?php echo $tripDetail['destination']; ?></h3class>
+                            <h3>Locatie, <?php echo $tripDetail['destination']; ?></h3class>
                         </div>
                         <div class="uit-reis-size">
                             <img class="uit-reis-icon margin-heart-icon" src="assets/img/cato.png" alt="heart-icon">
@@ -113,7 +113,7 @@ $tripDetails = $stmt->fetchAll();
                         </div>
                         <div class="margin-prijs">
                             <p>vanaf prijs p.p.</p>
-                            <p>$<?php echo $tripDetail['price']; ?></p>
+                            <p>€<?php echo $tripDetail['price']; ?></p>
                             <button>Bekijk</button>
                         </div>
                     </div>

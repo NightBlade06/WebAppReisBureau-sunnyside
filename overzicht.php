@@ -61,10 +61,10 @@ $tripDetails = $sql->fetchAll();
         </form>
     </div>
     <div class="generalBox ">
-        <div class="customizationMainBox">
+        <div class="customizationMainBox  ">
             <div class="customizationDestinationBox">
                 <h1>Bestemming</h1>
-                <select class ="customizationDestionationSelect" name="destination">
+                <select class="customizationDestionationSelect" name="destination">
                     <option class="destionationOption">Greek</option>
                     <option class="destionationOption">Eqypt</option>
                     <option class="destionationOption">Italy</option>
@@ -74,13 +74,14 @@ $tripDetails = $sql->fetchAll();
             <div class="customizationPriceBox">
                 <h1>Prijs</h1>
                 <p class="outputText">Max amount of money</p>
-                <p class="output" id="output">  200 </p>
-                <input id="customizationPriceSlider" class="customizationPriceSlider" type="range" min="0" max="2000" value="2000" class="slider" id="myRange">
+                <p class="output" id="output"> 200 </p>
+                <input id="customizationPriceSlider" class="customizationPriceSlider" type="range" min="0" max="2000"
+                       value="2000" class="slider" id="myRange">
             </div>
             <verblijf>
         </div>
         <div class="column-trips">
-            <?php foreach($tripDetails as $tripDetail) { ?>
+            <?php foreach ($tripDetails as $tripDetail) { ?>
                 <div class="travelBox">
                     <img src="assets/img/cato.png" alt="" class="travelImg">
                     <div class="travelInfoMainBox">
@@ -100,7 +101,7 @@ $tripDetails = $sql->fetchAll();
                             <img src="assets/img/heaert%20border(64px).png" alt="" class="heartImg">
                             <div class="travelPrizeBox">
                                 <p>Vanaf prijs p.p.</p>
-                                <h1> €<?php echo $tripDetail['price'];?></h1>
+                                <h1> €<?php echo $tripDetail['price']; ?></h1>
                                 <button>Bekijk</button>
                             </div>
                         </div>
