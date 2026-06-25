@@ -1,8 +1,9 @@
-<?
-$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
-$sql = $connectie->prepare("SELECT * FROM `trips`");
-$sql->execute();
-$tripDetails = $sql->fetchAll();
+<?php
+$conn = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+$sql = "SELECT * FROM trips r join accomadation v on r.accomadationID = v.accomadationID";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$tripDetails = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +95,7 @@ $tripDetails = $sql->fetchAll();
                     <div class="uit-reis-row">
                         <div class="uit-reis-column">
                             <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                            <h2>Naam reis/hotel</h2>
+                            <h2><?php echo $tripDetail['location']; ?></h2>
                             <h3>Locatie, Locatie, <?php echo $tripDetail['destination']; ?></h3class>
                         </div>
                         <div class="uit-reis-size">
@@ -125,9 +126,9 @@ $tripDetails = $sql->fetchAll();
 </main>
 
 <footer>
-    <p class="footer-text">Home</p>
-    <p class="footer-text">Reizen</p>
-    <p class="footer-text">Over ons</p>
+    <a href="index.php" class="footer-text">Home</a>
+    <a href="overzicht.php" class="footer-text">Reizen</a>
+    <a href="" f="" class="footer-text">Over ons</a>
 </footer>
 </body>
 </html>
