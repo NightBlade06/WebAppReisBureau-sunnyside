@@ -10,6 +10,9 @@ if (isset($_GET['search'])) {
     $sql->bindValue(':filter', '%' . $_GET['filter'] . '%');
     $sql->execute();
     $result = $sql->fetchAll();
+
+
+
 }
 ?>
 <!DOCTYPE html>
