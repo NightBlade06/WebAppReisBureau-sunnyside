@@ -9,9 +9,9 @@ $stmt = $conn->prepare($sql);
 $stmt->execute();
 $trips = $stmt->fetchAll();
 
-if (isset($_POST['Delete'])) {
-    $sql = $connectie->prepare("DELETE FROM trips WHERE id = :tripID");
-    $sql->bindValue(':tripID', $_POST['delete_tripID']);
+if (isset($_POST['delete'])) {
+    $sql = $conn->prepare("DELETE FROM trips WHERE tripID = :tripID");
+    $sql->bindValue(':tripID', $_POST['delete']);
     $sql->execute();
 }
 
@@ -30,15 +30,19 @@ if (isset($_POST['Delete'])) {
 Currently under construction
 <a href="logout.php">log out</a>
 <?php foreach ($trips as $trip) {?>
-<ul>
-    <li>tripID = <?php echo $trip['tripID']?> </li>
-    <li>destination = <?php echo $trip['destination']?></li>
-    <li>maxPeople = <?php echo $trip['maxPeople']?></li>
-    <li>accomadationID = <?php echo $trip['accomadationID']?></li>
-    <li>flightID = <?php echo $trip['flightID']?></li>
-    <li>price = <?php echo $trip['price']?></li>
-    <li>stars = <?php echo $trip['stars']?></li>
-</ul>
+<form method="post">
+    <ul>
+        <li>tripID = <?php echo $trip['tripID']?> </li>
+        <li>destination = <?php echo $trip['destination']?></li>
+        <li>maxPeople = <?php echo $trip['maxPeople']?></li>
+        <li>accomadationID = <?php echo $trip['accomadationID']?></li>
+        <li>flightID = <?php echo $trip['flightID']?></li>
+        <li>price = <?php echo $trip['price']?></li>
+        <li>stars = <?php echo $trip['stars']?></li>
+        <input type="hidden" name="delete_id" id="deleteRowId" value="">
+        <button name="delete" type="submit" value="<?php echo $trip['tripID']?>">DELETE </button>
+    </ul>
+</form>
     <a href="edit.php">edit</a>
 <?php
 }
