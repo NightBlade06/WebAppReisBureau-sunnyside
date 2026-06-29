@@ -40,10 +40,10 @@ Currently under construction
         <li>price = <?php echo $trip['price']?></li>
         <li>stars = <?php echo $trip['stars']?></li>
         <input type="hidden" name="delete_id" id="deleteRowId" value="">
+        <a href="edit.php?id=<?php echo $trip['tripID']; ?>">edit</a>
         <button name="delete" type="submit" value="<?php echo $trip['tripID']?>">DELETE </button>
     </ul>
 </form>
-    <a href="edit.php">edit</a>
 <?php
 }
 ?>

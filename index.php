@@ -60,6 +60,7 @@ $tripDetails = $stmt->fetchAll();
             </div>
             <div class="searchButtonBox">
                 <button  class="searchButton" type="submit"> View our choices</button>
+                <button> niek </button>
             </di>
         </form>
     </div>
