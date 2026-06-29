@@ -1,8 +1,19 @@
 <?php
-$connectie = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
-$sql = $connectie->prepare("SELECT * FROM `trips`");
-$sql->execute();
-$tripDetails = $sql->fetchAll();
+$conn = new PDO("mysql:host=mysql_db;dbname=sunnyside", "root", "rootpassword");
+$sql = ("SELECT * FROM trips r join accomadation v on r.accomadationID = v.accomadationID");
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$tripDetails = $stmt->fetchAll();
+
+if (isset($_GET['search'])) {
+    $sql = $connectie->prepare("SELECT * FROM trips r join accomadation v on r.accomadationID = v.accomadationID");
+    $sql->bindValue(':filter', '%' . $_GET['filter'] . '%');
+    $sql->execute();
+    $result = $sql->fetchAll();
+
+
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,16 +66,16 @@ $tripDetails = $sql->fetchAll();
                     <option class="searchOption" value="16">4</option>
                 </Select>
             </div>
-            <div class="searchButtonBox">
+            <form class="searchButtonBox" id="search" >
                 <button class="searchButton" type="submit"> View our choices</button>
-            </div>
+            </form>
         </form>
     </div>
     <div class="generalBox ">
-        <div class="customizationMainBox">
+        <div class="customizationMainBox  ">
             <div class="customizationDestinationBox">
                 <h1>Bestemming</h1>
-                <select class ="customizationDestionationSelect" name="destination">
+                <select class="customizationDestionationSelect" name="destination">
                     <option class="destionationOption">Greek</option>
                     <option class="destionationOption">Eqypt</option>
                     <option class="destionationOption">Italy</option>
@@ -74,20 +85,21 @@ $tripDetails = $sql->fetchAll();
             <div class="customizationPriceBox">
                 <h1>Prijs</h1>
                 <p class="outputText">Max amount of money</p>
-                <p class="output" id="output">  200 </p>
-                <input id="customizationPriceSlider" class="customizationPriceSlider" type="range" min="0" max="2000" value="2000" class="slider" id="myRange">
+                <p class="output" id="output"> 200 </p>
+                <input id="customizationPriceSlider" class="customizationPriceSlider" type="range" min="0" max="2000"
+                       value="2000" class="slider" id="myRange">
             </div>
-            <verblijf>
+
         </div>
         <div class="column-trips">
-            <?php foreach($tripDetails as $tripDetail) { ?>
+            <?php foreach ($tripDetails as $tripDetail) { ?>
                 <div class="travelBox">
                     <img src="assets/img/cato.png" alt="" class="travelImg">
                     <div class="travelInfoMainBox">
                         <div class="travelInfoBox">
                             <p>&#9733; &#9733; &#9733; &#9733; &#9733;</p>
-                            <h1>[country] hotel</h1>
-                            <h2>locatie, locatie,<?php echo $tripDetail['destination']; ?></h2>
+                            <h1><?php echo $tripDetail['location']?></h1>
+                            <h2>country: <?php echo $tripDetail['destination']; ?></h2>
                             <ul>
                                 <li>info</li>
                                 <li>info</li>
@@ -100,7 +112,7 @@ $tripDetails = $sql->fetchAll();
                             <img src="assets/img/heaert%20border(64px).png" alt="" class="heartImg">
                             <div class="travelPrizeBox">
                                 <p>Vanaf prijs p.p.</p>
-                                <h1> €<?php echo $tripDetail['price'];?></h1>
+                                <h1> €<?php echo $tripDetail['price']; ?></h1>
                                 <button>Bekijk</button>
                             </div>
                         </div>
@@ -112,9 +124,9 @@ $tripDetails = $sql->fetchAll();
 </main>
 
 <footer>
-    <p class="footer-text">Home</p>
-    <p class="footer-text">Reizen</p>
-    <p class="footer-text">Over ons</p>
+    <a href="index.php" class="footer-text">Home</a>
+    <a href="overzicht.php" class="footer-text">Reizen</a>
+    <a href="login.php" class="footer-text">Login</a>
 </footer>
 </body>
 <script src="assets/js/script.js"></script>
