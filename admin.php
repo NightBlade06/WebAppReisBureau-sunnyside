@@ -14,8 +14,6 @@ if (isset($_POST['delete'])) {
     $sql->bindValue(':tripID', $_POST['delete']);
     $sql->execute();
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
